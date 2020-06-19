@@ -1,0 +1,26 @@
+task: 0
+Wrost Case Complexity of Task 1 is O(1) becasue There are only two lines have to excute
+
+task: 1
+Wrost Case Complexity For this problem is O(n)
+Becasue there are only one loop which is depend on Input Which is come from File
+
+task: 2
+Wrost Case Complexity For this problem is O(n + n) = O(2n)
+So We Focus only on O(n)
+Becasue there are only two loops one is for finding unique Value and 
+second one is for finding maximum value in Dict
+
+task 3
+Wrost Case Complexity For this problem is O(n + n + n log n + n) = O(4n + log n)
+So We Focus only on O(n)
+Becaue there are lots of work which is done by step by step
+1) Extracting areaCode
+2) FindUniqeValue
+3) unique Value Copy in Final List sorted
+4) Calculate Percentage
+
+task: 4
+Wrost Case Complexity For this problem is O(n + n ) = O(2n)
+So We Focus only on O(n)
+Because there is only two loop two excute complete task
