@@ -8,30 +8,41 @@ with open('calls.csv', 'r') as f:
     reader = csv.reader(f)
     calls = list(reader)
 
-def uniqueValue(calls):
-    time = {}
+def SumUpCalls(calls):
+    timeDict = {}
     for i in calls:
-        time[i[0]] = i[3]
-    
-    return time
+        if i[0] in timeDict:
+            timeDict[i[0]] += int(i[3])
+        else:
+            timeDict[i[0]] = int(i[3])
+            
+        if i[1] in timeDict:
+            timeDict[i[1]] += int(i[3])
+        else:
+            timeDict[i[1]] = int(i[3])
+        
+    return timeDict
 
-def FindMaxValue(uniqueValue):
+    
+
+def findMax(timeDict):
     maxValue = 0
     key = 0
-    for i in uniqueValue.keys():
-        if(maxValue < int(uniqueValue[i])):
-            maxValue = int(uniqueValue[i])
+
+    for i in timeDict.keys():
+        if maxValue < timeDict[i]:
+            maxValue = timeDict[i]
             key = i
+
     return (key,maxValue)
 
 if __name__ == "__main__":
-    time = uniqueValue(calls)
-    key, maxValue = FindMaxValue(time)
+    timeDict = SumUpCalls(calls)
+    key,maxValue = findMax(timeDict)
 
-    print("{} spent the longest time, {} seconds, on the phone during September 2016.".format(key,maxValue))
-    
-    ## Wrost Case Complexity For this problem is O(n + n + n) = O(3n)
-    ## So We Focus only on O(n)
+    print("{} spent the longest time, {} seconds, on the phone during September 2016".format(key,maxValue))
+        
+    ## Wrost Case Complexity For this problem is O(n+n) = O(n)
 
 """
 TASK 2: Which telephone number spent the longest time on the phone
